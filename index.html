@@ -1,0 +1,1075 @@
+
+	
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULSO | Moda e estilo</title>
+
+    <style>
+html {
+    scroll-behavior: smooth;
+}
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f1117;
+        color: #e5e7eb;
+        margin: 0;
+        padding: 24px;
+        line-height: 1.6;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 22px 26px;
+        margin: 0 auto 28px;
+        max-width: 1200px;
+        background: #171c28;
+        border: 1px solid #30394b;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+
+    .cabecalho h1 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(44px, 6vw, 68px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    color: #60a5fa;
+    }
+
+    .cabecalho p {
+        margin: 4px 0 0;
+        color: #aab4c5;
+        font-size: 14px;
+    }
+
+    body > h1,
+    body > p,
+    body > h2,
+    .produtos {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body > h1 {
+        text-align: left;
+        color: #f8fafc;
+        font-size: clamp(26px, 4vw, 38px);
+        margin-top: 32px;
+        margin-bottom: 4px;
+    }
+
+    body > p {
+        color: #aab4c5;
+        margin-top: 0;
+    }
+
+    body > h2 {
+        color: #f3f4f6;
+        font-size: 23px;
+        margin-top: 32px;
+        margin-bottom: 18px;
+    }
+
+    button {
+        background: #2563eb;
+        color: #fff;
+        border: 1px solid transparent;
+        padding: 11px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .2s ease, transform .2s ease;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+    }
+
+    button:focus-visible {
+        outline: 2px solid #93c5fd;
+        outline-offset: 3px;
+    }
+
+    .produtos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+        gap: 22px;
+        align-items: stretch;
+    }
+
+    .produtos > div {
+        min-width: 0;
+        margin: 0;
+        padding: 20px;
+        background: #1c2230;
+        color: #f3f4f6;
+        border: 1px solid #30394b;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .produtos > div:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(37,99,235,.16);
+        border-color: #4b75bd;
+    }
+
+    .produtos img {
+        width: 100%;
+        max-width: 100%;
+        height: 210px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 16px;
+        border-radius: 8px;
+    }
+
+    .produtos h3 {
+        font-size: 19px;
+        margin: 8px 0;
+        color: #f8fafc;
+    }
+
+    .produtos p {
+        color: #60a5fa;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 8px 0 16px;
+    }
+
+    .produtos > div > button {
+        width: 100%;
+    }
+
+    .produtos div[id^="quantidade-"] {
+        padding: 0;
+        margin-top: 12px;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        display: none;
+    }
+
+    .produtos div[id^="quantidade-"] button {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .produtos div[id^="quantidade-"] span {
+        display: inline-block;
+        min-width: 28px;
+        text-align: center;
+        color: #f3f4f6;
+    }
+
+    #area-carrinho {
+        background: #171c28 !important;
+        color: #f3f4f6 !important;
+        border-left: 1px solid #30394b;
+    }
+
+    #area-carrinho p,
+    #area-carrinho li {
+        color: #e5e7eb;
+        margin-bottom: 12px;
+    }
+
+    #area-carrinho h2 {
+        color: #60a5fa;
+    }
+
+    #area-carrinho button {
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 12px;
+        }
+
+        .cabecalho {
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .cabecalho h1 {
+            font-size: 23px;
+        }
+
+        .cabecalho button {
+            width: 100%;
+        }
+
+        .produtos {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .produtos img {
+            height: 200px;
+        }
+    }
+
+    /* Identidade visual PULSO: premium, minimalista e responsiva */
+    body {
+        background:
+            radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, .10), transparent 42%),
+            #0b0d12;
+        color: #e8edf7;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .cabecalho {
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        padding: 22px 28px;
+        background: rgba(18, 22, 32, .96);
+        border: 1px solid #29344a;
+        border-radius: 14px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, .22);
+    }
+
+    .cabecalho h1 {
+        color: #f8fafc;
+        font-size: 29px;
+        font-weight: 800;
+        letter-spacing: 5px;
+    }
+
+    .cabecalho p {
+        color: #9ba9bf;
+        letter-spacing: 1.5px;
+        font-size: 11px;
+    }
+
+    .cabecalho button,
+    .produtos > div > button {
+        background: #2563eb;
+        border-radius: 7px;
+    }
+
+    .conteudo-pulso {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .banner-pulso {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 420px;
+        overflow: hidden;
+        padding: clamp(36px, 6vw, 76px);
+        background: linear-gradient(115deg, #151b29 0%, #101522 58%, #172b50 100%);
+        border: 1px solid #293b5c;
+        border-radius: 16px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+    }
+
+    .banner-texto {
+        position: relative;
+        z-index: 1;
+        max-width: 570px;
+    }
+
+    .etiqueta-banner,
+    .titulo-produtos > span {
+        color: #7db5ff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    .banner-pulso .banner-texto h2 {
+        margin: 17px 0 12px;
+        color: #fff;
+        font-size: clamp(44px, 7vw, 76px);
+        line-height: 1.04;
+        letter-spacing: -2px;
+    }
+
+    .banner-pulso .banner-texto p {
+        max-width: 420px;
+        margin: 0 0 25px;
+        color: #bac6d9;
+        font-size: 15px;
+    }
+
+    .botao-banner {
+        display: inline-flex;
+        align-items: center;
+        gap: 22px;
+        padding: 13px 18px;
+        color: #fff;
+        background: #2563eb;
+        border: 1px solid #4b82f2;
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: background .2s ease, transform .2s ease;
+    }
+
+    .botao-banner:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+    }
+
+    .banner-detalhe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: clamp(100px, 20vw, 210px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(125, 181, 255, .22);
+        border-radius: 50%;
+        color: rgba(125, 181, 255, .72);
+        transform: rotate(-12deg);
+    }
+
+    .banner-detalhe span {
+        font-size: clamp(65px, 12vw, 125px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -8px;
+    }
+
+    .linha-banner {
+        width: 42%;
+        height: 2px;
+        margin: 8px 0;
+        background: #4385f5;
+    }
+
+    .banner-detalhe small {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .titulo-produtos {
+        margin: 48px 0 22px;
+    }
+
+    .titulo-produtos h2 {
+        margin: 7px 0 2px;
+        color: #f8fafc;
+        font-size: clamp(25px, 4vw, 34px);
+        letter-spacing: -.7px;
+    }
+
+    .titulo-produtos p {
+        margin: 0;
+        color: #9ba9bf;
+        font-size: 14px;
+    }
+
+    .produtos > div {
+        background: #141925;
+        border-color: #283247;
+        border-radius: 12px;
+        padding: 22px;
+    }
+
+    .produtos > div:hover {
+        border-color: #477bd0;
+        box-shadow: 0 14px 34px rgba(37, 99, 235, .12);
+    }
+
+    .produtos img {
+        height: 220px;
+        object-fit: contain;
+    }
+
+    .produtos h3 {
+        font-size: 18px;
+        letter-spacing: .1px;
+    }
+
+    .produtos p {
+        color: #80b5ff;
+    }
+
+    /* Preserva os controles compactos de quantidade */
+    .produtos div[id^="quantidade-"] {
+        padding: 0;
+        margin-top: 12px;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .produtos div[id^="quantidade-"] button {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+    }
+
+    @media (max-width: 600px) {
+        .cabecalho {
+            gap: 14px;
+            padding: 18px;
+        }
+
+        .banner-pulso {
+    min-height: 340px;
+    padding: 36px 22px;
+}
+
+        .banner-pulso .banner-texto h2 {
+            letter-spacing: -1px;
+        }
+
+        .banner-detalhe {
+            position: absolute;
+            right: -35px;
+            bottom: -30px;
+            opacity: .35;
+        }
+
+        .titulo-produtos {
+            margin-top: 34px;
+        }
+    }
+
+
+    /* Menu de categorias PULSO */
+    .cabecalho {
+        position: relative;
+        z-index: 20;
+    }
+
+    .marca-pulso {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+
+    .botao-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        background: #111827;
+        border: 1px solid #34445f;
+        border-radius: 9px;
+    }
+
+    .botao-menu span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #93c5fd;
+        border-radius: 2px;
+    }
+
+    .menu-categorias {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: min(320px, calc(100vw - 32px));
+        padding: 12px;
+        background: #141925;
+        border: 1px solid #2d3b54;
+        border-radius: 12px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, .42);
+    }
+
+    .menu-categorias[hidden] {
+        display: none;
+    }
+
+    .menu-categorias .titulo-menu {
+        margin: 8px 10px 12px;
+        color: #80b5ff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .menu-categorias a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 10px;
+        color: #f1f5f9;
+        border-radius: 7px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background .2s ease, color .2s ease;
+    }
+
+    .menu-categorias a:hover {
+        color: #93c5fd;
+        background: #202b40;
+    }
+
+    .menu-categorias a span {
+        color: #60a5fa;
+    }
+
+    .categoria-vazia {
+        grid-column: 1 / -1;
+        padding: 28px;
+        text-align: center;
+        background: #141925;
+        border: 1px dashed #34445f;
+        border-radius: 12px;
+        color: #9ba9bf;
+    }
+
+    @media (max-width: 600px) {
+        .marca-pulso {
+            gap: 12px;
+        }
+
+        .menu-categorias {
+            left: 0;
+        }
+    }
+.cabecalho .marca-pulso p {
+    font-size: 18px !important;
+    letter-spacing: 3px !important;
+    margin: 6px 0 0;
+}
+</style>
+</head>
+
+<body>
+<header class="cabecalho">
+    <div class="marca-pulso">
+        <button type="button" class="botao-menu" id="botao-menu"
+                aria-label="Abrir categorias" aria-expanded="false"
+                aria-controls="menu-categorias" onclick="alternarMenuCategorias()">
+            <span></span><span></span><span></span>
+        </button>
+        <div>
+            <h1>PULSO</h1>
+            <p>MODA • ESTILO • PERSONALIDADE</p>
+        </div>
+    </div>
+
+    <button onclick="abrirCarrinho()">
+        🛒 Ver carrinho (<span id="quantidade-carrinho">0</span>)
+    </button>
+
+    <nav id="menu-categorias" class="menu-categorias" hidden aria-label="Categorias da loja">
+        <p class="titulo-menu">EXPLORAR CATEGORIAS</p>
+        <a href="#categoria-calcas" onclick="selecionarCategoria('Calças')">Calças <span>→</span></a>
+        <a href="#categoria-calcados" onclick="selecionarCategoria('Calçados')">Calçados <span>→</span></a>
+        <a href="#categoria-blusas" onclick="selecionarCategoria('Blusas')">Blusas <span>→</span></a>
+        <a href="#categoria-casacos" onclick="selecionarCategoria('Casacos')">Casacos <span>→</span></a>
+        <a href="#categoria-moletons" onclick="selecionarCategoria('Moletons')">Moletons <span>→</span></a>
+    </nav>
+</header>
+    <main class="conteudo-pulso">
+        <section class="banner-pulso">
+            <div class="banner-texto">
+                <span class="etiqueta-banner">NOVA IDENTIDADE. SEU ESTILO.</span>
+                <h2>SEU ESTILO.<br>SEU RITMO.</h2>
+                <p>Peças essenciais para acompanhar você em todos os momentos.</p>
+                <a class="botao-banner" href="#produtos">VER PRODUTOS <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="banner-detalhe" aria-hidden="true">
+                <span>P</span>
+                <div class="linha-banner"></div>
+                <small>PULSO / ESSENTIALS</small>
+            </div>
+        </section>
+
+        <div class="titulo-produtos">
+            <span>SELEÇÃO PULSO</span>
+            <h2>Nossos produtos</h2>
+            <p>Essenciais para o seu dia a dia.</p>
+        </div>
+
+<div id="fundo-carrinho" onclick="abrirCarrinho()"
+     style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000;">
+</div>
+
+<div id="area-carrinho"
+     style="display: none; position: fixed; top: 0; right: 0; width: 350px; max-width: 90%; height: 100vh; box-sizing: border-box; overflow-y: auto; background: white; color: #222; padding: 20px; box-shadow: -3px 0 12px rgba(0,0,0,0.2); z-index: 1001;">
+
+    <button onclick="abrirCarrinho()" style="float: right;">✖ Fechar</button>
+    <h2>Meu carrinho</h2>
+    <p id="carrinho">Carrinho: 0 produtos</p>
+    <ul id="lista-carrinho"></ul>
+    <p id="total">Total: R$ 0,00</p>
+
+    <button onclick="finalizarPedido()" style="width: 100%; margin-top: 12px;">
+        Finalizar pedido
+    </button>
+
+    <div id="formulario-checkout" style="display: none; margin-top: 18px;">
+        <h3>Dados para entrega</h3>
+
+        <label for="nome-cliente">Nome completo</label>
+        <input id="nome-cliente" type="text" autocomplete="name" maxlength="100"
+               style="width: 100%; box-sizing: border-box; margin: 6px 0 12px; padding: 9px;">
+
+        <label for="telefone-cliente">Telefone</label>
+        <input id="telefone-cliente" type="tel" autocomplete="tel" maxlength="20"
+               style="width: 100%; box-sizing: border-box; margin: 6px 0 12px; padding: 9px;">
+
+        <label for="endereco-cliente">Endereço completo para entrega</label>
+        <textarea id="endereco-cliente" autocomplete="street-address" maxlength="300" rows="3"
+                  style="width: 100%; box-sizing: border-box; margin: 6px 0 12px; padding: 9px;"></textarea>
+
+        <h3>Forma de pagamento</h3>
+        <label><input type="radio" name="forma-pagamento" value="PIX"> PIX</label>
+        <br>
+        <label><input type="radio" name="forma-pagamento" value="Cartão"> Cartão de crédito ou débito</label>
+
+        <p style="font-size: 13px; color: #555;">
+            Teste local: nenhuma cobrança será criada. Não digite dados do cartão aqui.
+        </p>
+
+        <button type="button" onclick="confirmarDadosCheckout()" style="width: 100%; margin-top: 8px;">
+            Revisar pedido
+        </button>
+    </div>
+</div>
+
+
+<section class="produtos" id="produtos">
+
+    <div data-categoria="Blusas">
+        <img src="imagens/pulso/camisa-basica.jpg" alt="Camisa básica" width="200">
+        <h3>Camisa básica</h3>
+        <p>Preço: R$ 49,90</p>
+        <button onclick="comprar('Camisa básica')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Camisa básica', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Camisa básica', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calçados">
+        <img src="imagens/pulso/tenis-casual.jpg" alt="Tênis casual" width="200">
+        <h3>Tênis casual</h3>
+        <p>Preço: R$ 129,90</p>
+        <button onclick="comprar('Tênis casual')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Tênis casual', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Tênis casual', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calças">
+        <img src="imagens/pulso/calca-jeans.jpg" alt="Calça jeans ilustrativa" width="200">
+        <h3>Calça jeans</h3>
+        <p>Preço: R$ 99,90</p>
+        <button onclick="comprar('Calça jeans')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Calça jeans', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Calça jeans', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calças">
+        <img src="imagens/pulso/calca-cargo.jpg" alt="Calça cargo ilustrativa" width="200">
+        <h3>Calça cargo</h3>
+        <p>Preço: R$ 119,90</p>
+        <button onclick="comprar('Calça cargo')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Calça cargo', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Calça cargo', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calças">
+        <img src="imagens/pulso/calca-moletom.jpg" alt="Calça de moletom ilustrativa" width="200">
+        <h3>Calça moletom</h3>
+        <p>Preço: R$ 89,90</p>
+        <button onclick="comprar('Calça moletom')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Calça moletom', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Calça moletom', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calçados">
+        <img src="imagens/tenis.jpg" alt="Tênis esportivo ilustrativo" width="200">
+        <h3>Tênis esportivo</h3>
+        <p>Preço: R$ 159,90</p>
+        <button onclick="comprar('Tênis esportivo')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Tênis esportivo', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Tênis esportivo', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Calçados">
+        <img src="imagens/pulso/sandalia-casual.jpg" alt="Sandália casual ilustrativa" width="200">
+        <h3>Sandália casual</h3>
+        <p>Preço: R$ 69,90</p>
+        <button onclick="comprar('Sandália casual')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Sandália casual', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Sandália casual', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Blusas">
+        <img src="imagens/pulso/blusa-oversized.jpg" alt="Blusa oversized ilustrativa" width="200">
+        <h3>Blusa oversized</h3>
+        <p>Preço: R$ 59,90</p>
+        <button onclick="comprar('Blusa oversized')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Blusa oversized', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Blusa oversized', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Blusas">
+        <img src="imagens/pulso/camiseta-estampada.jpg" alt="Camiseta estampada ilustrativa" width="200">
+        <h3>Camiseta estampada</h3>
+        <p>Preço: R$ 54,90</p>
+        <button onclick="comprar('Camiseta estampada')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Camiseta estampada', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Camiseta estampada', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Casacos">
+        <img src="imagens/pulso/casaco-corta-vento.jpg" alt="Casaco corta-vento ilustrativo" width="200">
+        <h3>Casaco corta-vento</h3>
+        <p>Preço: R$ 139,90</p>
+        <button onclick="comprar('Casaco corta-vento')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Casaco corta-vento', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Casaco corta-vento', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Casacos">
+        <img src="imagens/pulso/jaqueta-jeans.jpg" alt="Jaqueta jeans ilustrativa" width="200">
+        <h3>Jaqueta jeans</h3>
+        <p>Preço: R$ 179,90</p>
+        <button onclick="comprar('Jaqueta jeans')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Jaqueta jeans', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Jaqueta jeans', 1)">+</button>
+        </div>
+    </div>
+
+    <div data-categoria="Moletons">
+        <img src="imagens/pulso/moletom-basico.jpg" alt="Moletom básico ilustrativo" width="200">
+        <h3>Moletom básico</h3>
+        <p>Preço: R$ 109,90</p>
+        <button onclick="comprar('Moletom básico')">Comprar</button>
+        <div class="controle-quantidade" style="display:none; margin-top:12px;">
+            <button onclick="alterarQuantidade('Moletom básico', -1)">−</button>
+            <span class="numero-quantidade" style="margin:0 12px;">0</span>
+            <button onclick="alterarQuantidade('Moletom básico', 1)">+</button>
+        </div>
+    </div>
+
+</section>
+
+    </main>
+
+<script>
+function alternarMenuCategorias() {
+    const menu = document.getElementById("menu-categorias");
+    const botao = document.getElementById("botao-menu");
+    const vaiAbrir = menu.hidden;
+    menu.hidden = !vaiAbrir;
+    botao.setAttribute("aria-expanded", String(vaiAbrir));
+    botao.setAttribute("aria-label", vaiAbrir ? "Fechar categorias" : "Abrir categorias");
+}
+
+function selecionarCategoria(categoria) {
+    const menu = document.getElementById("menu-categorias");
+    const botao = document.getElementById("botao-menu");
+
+    document.querySelectorAll("#produtos > div").forEach(function(produto) {
+        const nome = produto.querySelector("h3")?.textContent.trim() || "";
+        const categoriaProduto = produto.dataset.categoria ||
+            (nome === "Camisa básica" ? "Blusas" :
+             nome === "Tênis casual" ? "Calçados" : "");
+
+        produto.hidden = categoria !== "Todos os produtos" &&
+                         categoriaProduto !== categoria;
+    });
+
+    let aviso = document.getElementById("aviso-categoria");
+    if (!aviso) {
+        aviso = document.createElement("p");
+        aviso.id = "aviso-categoria";
+        document.getElementById("produtos").before(aviso);
+    }
+
+    const visiveis = [...document.querySelectorAll("#produtos > div")]
+        .filter(produto => !produto.hidden).length;
+
+    aviso.textContent = visiveis
+        ? "Categoria: " + categoria
+        : "Ainda não há produtos nesta categoria.";
+
+    if (menu) menu.hidden = true;
+    if (botao) {
+        botao.setAttribute("aria-expanded", "false");
+        botao.setAttribute("aria-label", "Abrir categorias");
+    }
+
+    document.getElementById("produtos").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+</script>
+
+<script>
+      let carrinho = [];
+
+const catalogo = {
+    "Camisa básica": 49.90,
+    "Tênis casual": 129.90,
+    "Calça jeans": 99.90,
+    "Calça cargo": 119.90,
+    "Calça moletom": 89.90,
+    "Tênis esportivo": 159.90,
+    "Sandália casual": 69.90,
+    "Blusa oversized": 59.90,
+    "Camiseta estampada": 54.90,
+    "Casaco corta-vento": 139.90,
+    "Jaqueta jeans": 179.90,
+    "Moletom básico": 109.90,
+    "Moletom oversized": 129.90
+};
+
+function comprar(produto) {
+    const preco = catalogo[produto];
+
+    if (preco === undefined) {
+        alert("Produto não encontrado no catálogo: " + produto);
+        return;
+    }
+
+    const itemExistente = carrinho.find(function(item) {
+        return item.nome === produto;
+    });
+
+    if (itemExistente) {
+        itemExistente.quantidade++;
+    } else {
+        carrinho.push({
+            nome: produto,
+            preco: preco,
+            quantidade: 1
+        });
+    }
+
+    atualizarCarrinho();
+    atualizarControlesProdutos();
+}
+
+    
+
+function alterarQuantidade(produto, variacao) {
+    let item = carrinho.find(function(item) {
+        return item.nome === produto;
+    });
+
+    if (!item && variacao > 0) {
+        comprar(produto);
+        return;
+    }
+
+    if (!item) return;
+
+    item.quantidade += variacao;
+
+    if (item.quantidade <= 0) {
+        carrinho = carrinho.filter(function(i) {
+            return i.nome !== produto;
+        });
+    }
+
+    atualizarCarrinho();
+    atualizarControlesProdutos();
+}
+
+function atualizarControlesProdutos() {
+    document.querySelectorAll("#produtos > div").forEach(function(produto) {
+        const nomeElemento = produto.querySelector("h3");
+        if (!nomeElemento) return;
+
+        const nome = nomeElemento.textContent.trim();
+        const item = carrinho.find(function(i) {
+            return i.nome === nome;
+        });
+
+        const controle = produto.querySelector(".controle-quantidade");
+        if (!controle) return;
+
+        controle.style.display = item ? "block" : "none";
+
+        const numero = controle.querySelector(".numero-quantidade");
+        if (numero) {
+            numero.textContent = item ? item.quantidade : 0;
+        }
+    });
+}
+function atualizarCarrinho() {
+    const quantidadeTotal = carrinho.reduce(function(soma, item) {
+        return soma + item.quantidade;
+    }, 0);
+
+    const contador = document.getElementById("quantidade-carrinho");
+    if (contador) contador.textContent = quantidadeTotal;
+
+    const carrinhoTexto = document.getElementById("carrinho");
+    if (carrinhoTexto) {
+        carrinhoTexto.textContent = "Carrinho: " + quantidadeTotal;
+    }
+
+    const lista = document.getElementById("lista-carrinho");
+    const totalElemento = document.getElementById("total");
+
+    if (!lista || !totalElemento) return;
+
+    lista.innerHTML = "";
+    let totalCentavos = 0;
+
+    if (carrinho.length === 0) {
+        lista.innerHTML = "<li>Seu carrinho está vazio.</li>";
+    }
+
+    carrinho.forEach(function(item) {
+        const subtotal = Math.round(item.preco * 100) * item.quantidade;
+        totalCentavos += subtotal;
+
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(
+            item.nome + " — " + item.quantidade +
+            " unidade(s) — R$ " +
+            (subtotal / 100).toFixed(2).replace(".", ",") + " "
+        ));
+
+        const diminuir = document.createElement("button");
+        diminuir.textContent = "−";
+diminuir.style.width = "26px";
+diminuir.style.height = "26px";
+diminuir.style.padding = "0";
+diminuir.style.fontSize = "14px";
+        diminuir.onclick = function() {
+            alterarQuantidade(item.nome, -1);
+        };
+
+        const aumentar = document.createElement("button");
+        aumentar.textContent = "+";
+aumentar.style.width = "26px";
+aumentar.style.height = "26px";
+aumentar.style.padding = "0";
+aumentar.style.fontSize = "14px";
+        aumentar.onclick = function() {
+            alterarQuantidade(item.nome, 1);
+        };
+
+        li.appendChild(diminuir);
+        li.appendChild(aumentar);
+        lista.appendChild(li);
+    });
+
+    totalElemento.textContent =
+        "Total: R$ " + (totalCentavos / 100).toFixed(2).replace(".", ",");
+}
+
+
+function finalizarPedido() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    const itens = carrinho.map(function(item) {
+        return {
+            nome: item.nome,
+            quantidade: item.quantidade
+        };
+    });
+
+    const parametros = new URLSearchParams();
+    parametros.set("itens", JSON.stringify(itens));
+
+    window.location.href = "checkout.html?" + parametros.toString();
+}
+
+function confirmarDadosCheckout() {
+    const nome = document.getElementById("nome-cliente").value.trim();
+    const telefone = document.getElementById("telefone-cliente").value.trim();
+    const endereco = document.getElementById("endereco-cliente").value.trim();
+    const pagamento = document.querySelector('input[name="forma-pagamento"]:checked');
+
+    if (!nome || !telefone || !endereco || !pagamento) {
+        alert("Preencha nome, telefone, endereço e forma de pagamento.");
+        return;
+    }
+
+    alert(
+        "DADOS PREENCHIDOS PARA REVISÃO\n\n" +
+        "Nome: " + nome + "\n" +
+        "Telefone: " + telefone + "\n" +
+        "Endereço: " + endereco + "\n" +
+        "Pagamento: " + pagamento.value + "\n\n" +
+        "Total: " + document.getElementById("total").textContent +
+        "\n\nTeste local concluído. Nenhuma cobrança foi criada."
+    );
+}
+
+
+
+function abrirCarrinho() {
+    let area = document.getElementById("area-carrinho");
+
+    if (area.style.display === "none") {
+        area.style.display = "block";
+    } else {
+        area.style.display = "none";
+    }
+}
+
+</script>
+</body>
+</html>
